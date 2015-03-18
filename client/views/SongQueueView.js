@@ -2,6 +2,8 @@
 var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
+  	debugger;
+  	this.model.on('add', this.model.playFirst);
   },
 
   render: function() {
