@@ -15,7 +15,8 @@ var AppView = Backbone.View.extend({
     this.model.get("songQueue").on('remove', function(model){
 
       if (this.model.get("songQueue").length === 0){
-        this.playerView.setSong('');
+        this.playerView.stop();
+        this.model.set('currentSong', new SongModel());
       }
 
     }, this);
