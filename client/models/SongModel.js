@@ -33,7 +33,8 @@ var SongModel = Backbone.Model.extend({
   },
 
   downvote: function(){
-
+    this.set('votecount', this.get('votecount') - 1);
+    this.trigger('upvote', this);
   }
  
 

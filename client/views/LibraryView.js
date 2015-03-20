@@ -4,6 +4,7 @@ var LibraryView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
+
     this.render();
   },
 
@@ -13,6 +14,7 @@ var LibraryView = Backbone.View.extend({
     this.$el.children().detach();
 
     this.$el.html('<th>Library</th>').append(
+
       this.collection.map(function(song){
 
         this.libView = new LibraryEntryView({model: song}).render();
@@ -20,7 +22,9 @@ var LibraryView = Backbone.View.extend({
         return  this.libView;
       })
     );
-  
+    //debugger;
+    this.$el.find('tbody').prepend('<tr><td>Artist</td><td>Song</td><td class="center wide">Playcount</td><td class="center wide">Votes</td><td></td></tr>')
+    //debugger;
     
   }
 
